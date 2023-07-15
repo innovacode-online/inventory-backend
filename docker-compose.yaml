@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'inventory'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3307:3306'
+#     volumes:
+#       - my-db:/var/lib/mysql
+
+# volumes:
+#   my-db:

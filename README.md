@@ -17,8 +17,9 @@ php artisan serve
 ```
 
 ## Gists
-- <a href="https://gist.github.com/mduarte-innovacode/e5dc3236a9e35e8c2f255f4a6410ebd8" target="_blank">Categories seeder</a>
+- <a href="https://gist.github.com/innovacode-online/e5dc3236a9e35e8c2f255f4a6410ebd8" target="_blank">Categories seeder</a>
 
+- <a href="https://gist.github.com/innovacode-online/936c6f15092ffdf7b7f1e593d971c2eb" target="_blank">Category Request</a>
 
 - <a href="https://gist.github.com/mduarte-innovacode/fc507243f09457efe191be027dfe565b" target="_blank">Login Request</a>
 
@@ -27,5 +28,4 @@ php artisan serve
 - <a href="https://gist.github.com/mduarte-innovacode/d0cbf9a842fb5c1ef26240c700178943" target="_blank">Product Request</a>
 
 
-- <a href="https://gist.github.com/mduarte-innovacode/936c6f15092ffdf7b7f1e593d971c2eb" target="_blank">Category Request</a>
 

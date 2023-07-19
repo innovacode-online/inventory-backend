@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Resources\ProductCollection;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,29 +14,27 @@ class ProductContoller extends Controller
      */
     public function index()
     {
-        return Product::all();
+        return new ProductCollection(Product::all());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         $request->validated();
+        
         $request['slug'] = $this->createSlug($request['name']);
-        Product::created($request->all());
-
-        return response([
-            'message' => 'Se creo el producto'
-        ]);
+        $product = Product::create($request->all());
+        return $product;
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $term)
     {
-        //
+        return Product::where('id', $term)->orWhere('slug',$term)->get();
     }
 
     /**
@@ -42,7 +42,20 @@ class ProductContoller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::find($id);
+
+        if( !$product ){
+            return response()->json([
+                'message' => 'No se encontro el producto'
+            ], 404);
+        };
+
+        $request['slug'] = $this->createSlug($request['name']);
+
+        $product->update( $request->all() );
+        return response()->json([
+            'message' => 'Producto actualizado'
+        ], 200);
     }
 
     /**
@@ -50,7 +63,18 @@ class ProductContoller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::find($id);
+
+        if( !$product ){
+            return response()->json([
+                'message' => 'No se encontro la categoria'
+            ], 404);
+        };
+
+        $product->delete();
+        return response()->json([
+            'message' => 'Producto eliminado'
+        ], 200);
     }
 
     

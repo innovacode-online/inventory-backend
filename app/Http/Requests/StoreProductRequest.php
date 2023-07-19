@@ -11,7 +11,7 @@ class StoreProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,25 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'          => 'required|unique:products,name',
+            'description'   => 'required',
+            'stock'         => 'required',
+            'price'         => 'required',
+            'category_id'   => 'required',
+            'image'         => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required'         =>  'Se requiere el nombre',
+            'name.unique'           =>  'Ya existe un producto con este nombre',
+            'description.required'  =>  'Debe agregar una descripcion',
+            'category_id.required'  =>  'Debe asignar una categoria',
+            'stock.required'        =>  'Debe agregar una cantidad de stock',
+            'price.required'        =>  'Debe añadir un precio',
+            'image.required'        =>  'Se requiere una imagen',
         ];
     }
 }

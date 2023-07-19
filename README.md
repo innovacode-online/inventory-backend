@@ -21,11 +21,11 @@ php artisan serve
 
 - <a href="https://gist.github.com/innovacode-online/936c6f15092ffdf7b7f1e593d971c2eb" target="_blank">Category Request</a>
 
-- <a href="https://gist.github.com/mduarte-innovacode/fc507243f09457efe191be027dfe565b" target="_blank">Login Request</a>
+- <a href="https://gist.github.com/innovacode-online/fc507243f09457efe191be027dfe565b" target="_blank">Login Request</a>
 
-- <a href="https://gist.github.com/mduarte-innovacode/cdceeeb2058c2087704e664835881f86" target="_blank">Register Request</a>
+- <a href="https://gist.github.com/innovacode-online/cdceeeb2058c2087704e664835881f86" target="_blank">Register Request</a>
 
-- <a href="https://gist.github.com/mduarte-innovacode/d0cbf9a842fb5c1ef26240c700178943" target="_blank">Product Request</a>
+- <a href="https://gist.github.com/innovacode-online/d0cbf9a842fb5c1ef26240c700178943" target="_blank">Product Request</a>
 
 
 

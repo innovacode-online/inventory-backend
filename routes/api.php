@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductContoller;
+use App\Http\Controllers\SaleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +43,6 @@ Route::apiResource('/categories', CategoryController::class);
 
 // PRODUCTS
 Route::apiResource('/products', ProductContoller::class);
+
+// SALES
+Route::apiResource('/sales', SaleController::class);

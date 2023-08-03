@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,8 @@ class ProductContoller extends Controller
      */
     public function show(string $term)
     {
-        return Product::where('id', $term)->orWhere('slug',$term)->get();
+        $product = Product::where('id', $term)->orWhere('slug',$term)->get();
+        return new ProductResource( $product[0] );
     }
 
     /**
